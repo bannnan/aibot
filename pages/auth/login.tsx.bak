@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import React, { type ReactElement, useEffect, useState, useRef } from 'react';
 import type { ComponentStatus } from 'react-daisyui/dist/types';
-import { getCsrfToken, signIn, useSession, getSession } from 'next-auth/react';
+import { getCsrfToken, signIn, useSession } from 'next-auth/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import env from '@/lib/env';
@@ -240,21 +240,10 @@ export const getServerSideProps = async (
 ) => {
   const { locale } = context;
 
-  // 🔑 Redirect if already logged in
-  const session = await getSession(context);
-  if (session) {
-    return {
-      redirect: {
-        destination: '/dashboard',
-        permanent: false,
-      },
-    };
-  }
-
   return {
     props: {
       ...(locale ? await serverSideTranslations(locale, ['common']) : {}),
-      csrfToken: (await getCsrfToken(context)) ?? null, // ✅ null-safe
+      csrfToken: await getCsrfToken(context),
       authProviders: authProviderEnabled(),
       recaptchaSiteKey: env.recaptcha.siteKey,
     },
@@ -262,4 +251,3 @@ export const getServerSideProps = async (
 };
 
 export default Login;
-
