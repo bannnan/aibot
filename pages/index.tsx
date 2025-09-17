@@ -22,6 +22,11 @@ const Home: NextPageWithLayout = () => {
     <>
       <Head>
         <title>{t('homepage-title')}</title>
+        <link rel="icon" href="/favicon.ico?v=1" />
+        <link rel="shortcut icon" href="/favicon.ico?v=1" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1" />
       </Head>
 
       <div className="container mx-auto">
