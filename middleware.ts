@@ -71,6 +71,15 @@ const unAuthenticatedRoutes = [
   '/unlock-account',
   '/login/saml',
   '/.well-known/*',
+  // Public assets (served from /public)
+  '/favicon.ico',
+  '/favicon-*.png',
+  '/apple-touch-icon.png',
+  '/site.webmanifest',
+  '/robots.txt',
+  '/logo.png',
+  '/logowhite.png',
+  '/safari-pinned-tab.svg',
 ];
 
 export default async function middleware(req: NextRequest) {
@@ -135,5 +144,7 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|api/auth/session).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|api/auth/session|favicon\\.ico|favicon-.*\\.png|apple-touch-icon\\.png|site\\.webmanifest|robots\\.txt|logo\\.png|logowhite\\.png|safari-pinned-tab\\.svg).*)',
+  ],
 };
