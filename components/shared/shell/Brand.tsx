@@ -6,13 +6,14 @@ const Brand = () => {
   const { theme } = useTheme();
   return (
     <div className="flex pt-6 shrink-0 items-center">
-      <Image
-        src={app.logoUrl}
-        alt={app.name}
-        width={40}
-        height={40}
-        className="object-contain"
-      />
+      <div className="relative h-12 w-12"> {/* 48x48 box */}
+        <Image
+          src={app.logoUrl}
+          alt={app.name}
+          fill
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 };
