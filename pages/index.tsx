@@ -27,12 +27,14 @@ const Home: NextPageWithLayout = () => {
       <div className="container mx-auto">
         <div className="navbar bg-base-100 px-0 sm:px-1">
           <div className="flex-1">
-            <Link href="/" className="btn btn-ghost normal-case p-0">
+            <Link href="/" className="inline-flex items-center p-0 leading-none">
               <Image
                 src={app.logoUrl}
                 alt={app.name}
                 width={120}
                 height={28}
+                className="block"
+                unoptimized
                 priority
               />
             </Link>
