@@ -5,14 +5,15 @@ import useTheme from 'hooks/useTheme';
 const Brand = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex pt-6 shrink-0 items-center text-xl font-bold gap-2 dark:text-gray-100">
+    <div className="flex pt-6 shrink-0 items-center gap-3 dark:text-gray-100">
       <Image
-        src={theme !== 'dark' ? app.logoUrl : '/logowhite.png'}
+        src={app.logoUrl}
         alt={app.name}
-        width={30}
-        height={30}
+        width={40}   // increase size
+        height={40}  // increase size
+        className="object-contain"
       />
-      {app.name}
+      <span className="text-2xl font-bold">{app.name}</span>
     </div>
   );
 };
