@@ -12,21 +12,23 @@ import env from '@/lib/env';
 import Head from 'next/head';
 import Image from 'next/image';
 import app from '@/lib/app';
-import { useTheme } from 'next-themes';   // ✅ new
+import ThemeToggle from '@/components/shared/ThemeToggle'; // ✅ new
 
 const Home: NextPageWithLayout = () => {
   const { t } = useTranslation('common');
-  const { theme, setTheme } = useTheme();
 
-  // ✅ Keep DaisyUI in sync with next-themes
+  // Keep DaisyUI in sync with next-themes
   useEffect(() => {
-    if (theme) {
-      document.documentElement.setAttribute(
-        'data-theme',
-        theme === 'dark' ? 'black' : 'corporate'
-      );
+    if (typeof window !== 'undefined') {
+      const theme = localStorage.getItem('theme');
+      if (theme) {
+        document.documentElement.setAttribute(
+          'data-theme',
+          theme === 'dark' ? 'black' : 'corporate'
+        );
+      }
     }
-  }, [theme]);
+  }, []);
 
   return (
     <>
@@ -58,13 +60,7 @@ const Home: NextPageWithLayout = () => {
           <div className="flex-none">
             <ul className="menu menu-horizontal flex items-center gap-2 sm:gap-4">
               <li>
-                {/* ✅ Toggle button */}
-                <button
-                  className="btn btn-sm"
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                >
-                  {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}
-                </button>
+                <ThemeToggle /> {/* ✅ Toggle here */}
               </li>
               <li>
                 <Link
@@ -97,9 +93,7 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   if (env.hideLandingPage) {
     return {
       redirect: {
