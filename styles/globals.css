@@ -51,13 +51,14 @@ a {
 
   /* Brand purple background for .btn-primary */
   .btn-primary {
-    @apply bg-[#8b5cf6] text-white border-0;
+    @apply bg-[#8b5cf6] text-white border-0 transform transition-transform duration-200;
     transition: background-color 0.1s;
   }
   .btn-primary:hover,
   .btn-primary:focus:hover {
     /* Darker purple background on hover */
     background-color: #7c3aed;
+    transform: scale(1.05);
   }
   .btn-primary:focus-visible {
     /* Custom ring in purple brand color */
