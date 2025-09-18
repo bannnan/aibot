@@ -56,10 +56,7 @@ export default function Footer() {
             className="relative group"
           >
             <Linkedin
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
-              style={{
-                filter: 'drop-shadow(0 0 4px #8b5cf6) drop-shadow(0 0 6px #ec4899) drop-shadow(0 0 8px #3b82f6)',
-              }}
+              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
             />
           </a>
           {/* YouTube */}
@@ -71,10 +68,7 @@ export default function Footer() {
             className="relative group"
           >
             <Youtube
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
-              style={{
-                filter: 'drop-shadow(0 0 4px #ec4899) drop-shadow(0 0 6px #8b5cf6) drop-shadow(0 0 8px #3b82f6)',
-              }}
+              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
             />
           </a>
           {/* Twitter/X */}
@@ -86,10 +80,7 @@ export default function Footer() {
             className="relative group"
           >
             <X
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
-              style={{
-                filter: 'drop-shadow(0 0 4px #3b82f6) drop-shadow(0 0 6px #8b5cf6) drop-shadow(0 0 8px #ec4899)',
-              }}
+              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
             />
           </a>
         </div>
