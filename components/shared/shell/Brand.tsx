@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import useTheme from 'hooks/useTheme';
 import { useRouter } from 'next/router';
-import logoDark from '@/public/logo-dark.png';
-import logoLight from '@/public/logo-light.png';
+import logoDark from '/public/logo-dark.png';
+import logoLight from '/public/logo-light.png';
 
 interface BrandProps {
   size?: number; // size in pixels
