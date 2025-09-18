@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section className="text-center py-20">
       {/* Tagline */}
-      <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-8">
+      <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-10">
         The first AI-powered cloud automation platform
       </p>
 
