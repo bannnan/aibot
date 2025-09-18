@@ -49,16 +49,15 @@ a {
     @apply rounded normal-case;
   }
 
-  /* Brand gradient for .btn-primary */
+  /* Brand purple background for .btn-primary */
   .btn-primary {
-    @apply bg-gradient-to-r from-[#8b5cf6] via-[#ec4899] to-[#3b82f6] text-white border-0;
-    transition: transform 0.1s, filter 0.1s;
+    @apply bg-[#8b5cf6] text-white border-0;
+    transition: background-color 0.1s;
   }
   .btn-primary:hover,
   .btn-primary:focus:hover {
-    /* Slightly brighten and scale up on hover */
-    filter: brightness(1.08);
-    transform: scale(1.03);
+    /* Darker purple background on hover */
+    background-color: #7c3aed;
   }
   .btn-primary:focus-visible {
     /* Custom ring in purple brand color */

@@ -12,6 +12,8 @@ module.exports = {
       {
         termynal: {
           primary: "#8b5cf6",
+          "primary-focus": "#7c3aed",
+          "primary-content": "#ffffff",
           secondary: "#ec4899",
           accent: "#3b82f6",
           neutral: "#3d4451",
