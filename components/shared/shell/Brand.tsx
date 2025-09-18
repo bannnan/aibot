@@ -21,16 +21,10 @@ const Brand = ({ size }: BrandProps) => {
         style={{ height: `${finalSize}px`, width: `${finalSize}px` }}
       >
         <Image
-          src={logoDark}
+          src={theme === 'dark' ? logoLight : logoDark}
           alt="Logo"
           fill
-          className="object-contain block dark:hidden"
-        />
-        <Image
-          src={logoLight}
-          alt="Logo"
-          fill
-          className="object-contain hidden dark:block"
+          className="object-contain"
         />
       </div>
     </div>
