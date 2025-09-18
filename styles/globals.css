@@ -41,6 +41,9 @@ a {
   .text-primary {
     color: #8b5cf6 !important;
   }
+  .text-brand-purple {
+    color: #8b5cf6 !important;
+  }
 }
 
 @layer components {
