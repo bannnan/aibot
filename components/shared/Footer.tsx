@@ -55,12 +55,15 @@ export default function Footer() {
             aria-label="LinkedIn"
             className="relative group"
           >
-            <Linkedin
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
               style={{
-                filter: 'drop-shadow(0 0 4px #8b5cf6) drop-shadow(0 0 6px #ec4899) drop-shadow(0 0 8px #3b82f6)',
+                background:
+                  'radial-gradient(circle at 50% 50%, #8b5cf6 0%, #ec4899 60%, #3b82f6 100%)',
+                zIndex: 0,
               }}
             />
+            <Linkedin className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
           </a>
           {/* YouTube */}
           <a
@@ -70,12 +73,15 @@ export default function Footer() {
             aria-label="YouTube"
             className="relative group"
           >
-            <Youtube
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
               style={{
-                filter: 'drop-shadow(0 0 4px #ec4899) drop-shadow(0 0 6px #8b5cf6) drop-shadow(0 0 8px #3b82f6)',
+                background:
+                  'radial-gradient(circle at 50% 50%, #ec4899 0%, #8b5cf6 60%, #3b82f6 100%)',
+                zIndex: 0,
               }}
             />
+            <Youtube className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
           </a>
           {/* Twitter/X */}
           <a
@@ -85,12 +91,15 @@ export default function Footer() {
             aria-label="Twitter"
             className="relative group"
           >
-            <X
-              className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary"
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
               style={{
-                filter: 'drop-shadow(0 0 4px #3b82f6) drop-shadow(0 0 6px #8b5cf6) drop-shadow(0 0 8px #ec4899)',
+                background:
+                  'radial-gradient(circle at 50% 50%, #3b82f6 0%, #8b5cf6 60%, #ec4899 100%)',
+                zIndex: 0,
               }}
             />
+            <X className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
           </a>
         </div>
       </div>
