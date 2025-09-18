@@ -38,7 +38,7 @@ export default function HeroSection() {
       {/* Chat Box */}
       <form
         onSubmit={handleSubmit}
-        className="w-[750px] mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
+        className="w-[750px] mx-auto border border-[#3b82f6] rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
       >
         <input
           type="text"
@@ -67,7 +67,7 @@ export default function HeroSection() {
             key={suggestion}
             type="button"
             onClick={() => handleSuggestion(suggestion)}
-            className="px-4 py-2 rounded-full border text-sm hover:bg-gray-100"
+            className="px-4 py-2 rounded-full border border-[#3b82f6] text-sm hover:bg-gray-100"
           >
             {suggestion}
           </button>
