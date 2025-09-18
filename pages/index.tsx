@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { type ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import type { NextPageWithLayout } from 'types';
 import { GetServerSidePropsContext } from 'next';
@@ -8,15 +8,25 @@ import FAQSection from '@/components/defaultLanding/FAQSection';
 import HeroSection from '@/components/defaultLanding/HeroSection';
 import FeatureSection from '@/components/defaultLanding/FeatureSection';
 import PricingSection from '@/components/defaultLanding/PricingSection';
-import useTheme from 'hooks/useTheme';
 import env from '@/lib/env';
 import Head from 'next/head';
 import Image from 'next/image';
 import app from '@/lib/app';
+import { useTheme } from 'next-themes';   // ✅ new
 
 const Home: NextPageWithLayout = () => {
-  const { toggleTheme, selectedTheme } = useTheme();
   const { t } = useTranslation('common');
+  const { theme, setTheme } = useTheme();
+
+  // ✅ Keep DaisyUI in sync with next-themes
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.setAttribute(
+        'data-theme',
+        theme === 'dark' ? 'black' : 'corporate'
+      );
+    }
+  }, [theme]);
 
   return (
     <>
@@ -47,16 +57,15 @@ const Home: NextPageWithLayout = () => {
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal flex items-center gap-2 sm:gap-4">
-              {env.darkModeEnabled && (
-                <li>
-                  <button
-                    className="bg-none p-0 rounded-lg flex items-center justify-center"
-                    onClick={toggleTheme}
-                  >
-                    <selectedTheme.icon className="w-5 h-5" />
-                  </button>
-                </li>
-              )}
+              <li>
+                {/* ✅ Toggle button */}
+                <button
+                  className="btn btn-sm"
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                >
+                  {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}
+                </button>
+              </li>
               <li>
                 <Link
                   href="/auth/join"
@@ -91,7 +100,6 @@ const Home: NextPageWithLayout = () => {
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  // Redirect to login page if landing page is disabled
   if (env.hideLandingPage) {
     return {
       redirect: {
