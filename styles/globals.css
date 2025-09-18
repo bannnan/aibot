@@ -38,6 +38,9 @@ a {
   textarea {
     @apply bg-white text-gray-900 rounded !important;
   }
+  .text-primary {
+    color: #8b5cf6 !important;
+  }
 }
 
 @layer components {
