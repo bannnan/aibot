@@ -12,7 +12,7 @@ import env from '@/lib/env';
 import Head from 'next/head';
 import Image from 'next/image';
 import app from '@/lib/app';
-import ThemeToggle from '@/components/shared/ThemeToggle'; // ✅ new
+import ThemeToggle from '@/components/shared/ThemeToggle';
 
 const Home: NextPageWithLayout = () => {
   const { t } = useTranslation('common');
@@ -58,24 +58,31 @@ const Home: NextPageWithLayout = () => {
             </Link>
           </div>
           <div className="flex-none">
-            <ul className="menu menu-horizontal flex items-center gap-2 sm:gap-4">
-              <li>
-                <ThemeToggle /> {/* ✅ Toggle here */}
+            <ul className="menu menu-horizontal flex items-center gap-6 sm:gap-8">
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/features">Features</Link></li>
+              <li><Link href="/pricing">Pricing</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li tabIndex={0}>
+                <details>
+                  <summary>Docs</summary>
+                  <ul className="p-2 bg-base-100">
+                    <li><Link href="/docs/getting-started">Getting Started</Link></li>
+                    <li><Link href="/docs/api">API</Link></li>
+                  </ul>
+                </details>
               </li>
+              <li><ThemeToggle /></li>
               <li>
-                <Link
-                  href="/auth/join"
-                  className="btn btn-primary btn-md py-3 px-2 sm:px-4 text-white"
-                >
-                  {t('sign-up')}
+                <Link href="/auth/join" className="btn btn-primary text-white">
+                  Sign Up
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/auth/login"
-                  className="btn btn-primary dark:border-zinc-600 dark:border-2 dark:text-zinc-200 btn-outline py-3 px-2 sm:px-4 btn-md"
-                >
-                  {t('sign-in')}
+                <Link href="/auth/login" className="btn btn-outline">
+                  Sign In
                 </Link>
               </li>
             </ul>

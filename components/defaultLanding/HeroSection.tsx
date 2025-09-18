@@ -7,22 +7,25 @@ const HeroSection = () => {
     <div className="hero py-52">
       <div className="hero-content text-center">
         <div className="max-w-7xl">
-          <h1 className="text-5xl font-bold"> {t('enterprise-saas-kit')}</h1>
+          <h1 className="text-5xl font-bold">
+            Automate DevOps & Cloud Tasks with AI
+          </h1>
           <p className="py-6 text-2xl font-normal">
-            {t('kickstart-your-enterprise')}
+            Termynal saves engineers hours every week by turning natural
+            language into secure, production-ready deployments.
           </p>
-          <div className="flex items-center justify-center gap-2 ">
+          <div className="flex items-center justify-center gap-2">
             <Link
               href="/auth/join"
               className="btn btn-primary px-8 no-underline"
             >
-              {t('get-started')}
+              Get Started
             </Link>
             <Link
-              href="https://github.com/boxyhq/saas-starter-kit"
+              href="/features"
               className="btn btn-outline px-8"
             >
-              GitHub
+              Learn More
             </Link>
           </div>
         </div>
