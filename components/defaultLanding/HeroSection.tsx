@@ -1,37 +1,76 @@
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+import { useState } from "react";
+import { useRouter } from "next/router";
 
-const HeroSection = () => {
-  const { t } = useTranslation('common');
+export default function HeroSection() {
+  const [input, setInput] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Example: if user not logged in, redirect to auth
+    const isLoggedIn = false; // replace with your auth check
+    if (!isLoggedIn) {
+      router.push("/auth/login");
+    } else {
+      console.log("User prompt:", input);
+      // Future: send to AI automation engine
+    }
+  };
+
+  const handleSuggestion = (text: string) => {
+    setInput(text);
+  };
+
   return (
-    <div className="hero py-52">
-      <div className="hero-content text-center">
-        <div className="max-w-7xl">
-          <h1 className="text-5xl font-bold">
-            Automate DevOps & Cloud Tasks with AI
-          </h1>
-          <p className="py-6 text-2xl font-normal">
-            Termynal saves engineers hours every week by turning natural
-            language into secure, production-ready deployments.
-          </p>
-          <div className="flex items-center justify-center gap-2">
-            <Link
-              href="/auth/join"
-              className="btn btn-primary px-8 no-underline"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/features"
-              className="btn btn-outline px-8"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <section className="text-center py-20">
+      {/* Tagline */}
+      <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
+        The first AI-powered cloud automation platform
+      </p>
 
-export default HeroSection;
+      {/* Headline */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">
+        Automate your cloud in seconds with natural language
+      </h1>
+
+      {/* Chat Box */}
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-2xl mx-auto border rounded-lg shadow-md p-4 flex items-center gap-2 bg-white"
+      >
+        <input
+          type="text"
+          placeholder="Describe what you want to automate..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="flex-1 outline-none text-gray-700"
+        />
+        <button
+          type="submit"
+          className="btn btn-primary"
+        >
+          Go build →
+        </button>
+      </form>
+
+      {/* Suggestions */}
+      <div className="flex flex-wrap justify-center gap-3 mt-6">
+        {[
+          "Deploy a secure Kubernetes cluster",
+          "Set up CI/CD pipeline on AWS",
+          "Automate cloud cost optimization",
+          "Create a disaster recovery workflow",
+        ].map((suggestion) => (
+          <button
+            key={suggestion}
+            type="button"
+            onClick={() => handleSuggestion(suggestion)}
+            className="px-4 py-2 rounded-full border text-sm hover:bg-gray-100"
+          >
+            {suggestion}
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
