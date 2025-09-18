@@ -30,7 +30,9 @@ export default function HeroSection() {
 
       {/* Headline */}
       <h1 className="text-4xl sm:text-5xl mb-6 font-normal">
-        <span className="text-brand-purple font-extrabold">Agentic AI</span> for Cloud Automation
+        <span className="font-extrabold bg-gradient-to-r from-[#8b5cf6] via-[#ec4899] to-[#3b82f6] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(139,92,246,0.6)]">
+          Agentic AI
+        </span> for Cloud Automation
       </h1>
 
       {/* Chat Box */}
