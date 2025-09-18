@@ -7,6 +7,18 @@ module.exports = {
     'node_modules/daisyui/dist/**/*.js',
     'node_modules/react-daisyui/dist/**/*.js',
   ],
+  theme: {
+    extend: {
+      transitionProperty: {
+        'transform': 'transform',
+      },
+      scale: {
+        '102': '1.02',
+        '105': '1.05',
+        '110': '1.10',
+      },
+    },
+  },
   daisyui: {
     themes: [
       {
@@ -23,5 +35,10 @@ module.exports = {
       'black',
     ],
   },
+  safelist: [
+    'transition',
+    'transform',
+    'hover:scale-105',
+  ],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
