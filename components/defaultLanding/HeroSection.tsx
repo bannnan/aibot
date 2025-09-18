@@ -30,7 +30,7 @@ export default function HeroSection() {
 
       {/* Headline */}
       <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">
-        Automate your cloud in seconds with natural language
+        <span className="text-brand-purple">Agentic AI</span> for Cloud Automation
       </h1>
 
       {/* Chat Box */}
