@@ -36,7 +36,7 @@ export default function HeroSection() {
       {/* Chat Box */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-4xl mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
+        className="w-[750px] mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
       >
         <input
           type="text"
