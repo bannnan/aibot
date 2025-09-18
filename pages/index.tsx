@@ -8,6 +8,7 @@ import FAQSection from '@/components/defaultLanding/FAQSection';
 import HeroSection from '@/components/defaultLanding/HeroSection';
 import FeatureSection from '@/components/defaultLanding/FeatureSection';
 import PricingSection from '@/components/defaultLanding/PricingSection';
+import Footer from '@/components/shared/Footer';
 import env from '@/lib/env';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -96,6 +97,7 @@ const Home: NextPageWithLayout = () => {
         <div className="divider"></div>
         <FAQSection />
       </div>
+      <Footer />
     </>
   );
 };
