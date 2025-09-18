@@ -22,14 +22,14 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="text-center py-20">
+    <section className="text-center py-10 sm:py-20">
       {/* Tagline */}
-      <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-10">
+      <p className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-primary mb-6 sm:mb-10">
         The first AI-powered cloud automation platform
       </p>
 
       {/* Headline */}
-      <h1 className="text-4xl sm:text-5xl mb-6 font-normal">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 font-normal">
         <span className="font-extrabold bg-gradient-to-r from-[#8b5cf6] via-[#ec4899] to-[#3b82f6] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(139,92,246,0.6)]">
           Agentic AI
         </span> for Cloud Automation
@@ -38,18 +38,18 @@ export default function HeroSection() {
       {/* Chat Box */}
       <form
         onSubmit={handleSubmit}
-        className="w-[750px] mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
+        className="w-full max-w-2xl mx-auto border rounded-lg shadow-md p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-3 bg-white"
       >
         <input
           type="text"
           placeholder="Describe what you want to automate..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 outline-none text-gray-700 text-base py-6"
+          className="flex-1 outline-none text-gray-700 text-sm sm:text-base py-3 sm:py-6 px-3"
         />
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-primary w-full sm:w-auto"
         >
           Go build →
         </button>
