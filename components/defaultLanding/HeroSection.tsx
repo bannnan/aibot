@@ -36,20 +36,20 @@ export default function HeroSection() {
       {/* Chat Box */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-3xl mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
+        className="max-w-4xl mx-auto border rounded-lg shadow-md p-6 flex items-center gap-3 bg-white"
       >
         <input
           type="text"
           placeholder="Describe what you want to automate..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 outline-none text-gray-700 text-lg py-3"
+          className="flex-1 outline-none text-gray-700 text-xl py-4"
         />
         <button
           type="submit"
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary"
         >
-          Try it now →
+          Go build →
         </button>
       </form>
 
