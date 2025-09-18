@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Linkedin, Youtube, Twitter as X } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -46,9 +47,60 @@ export default function Footer() {
       <div className="border-t border-gray-400 mt-10 pt-6 text-center text-sm">
         <p>© {new Date().getFullYear()} Termynal. All rights reserved.</p>
         <div className="flex justify-center gap-4 mt-4">
-          <a href="https://github.com/your-repo" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/company/your-company" target="_blank">LinkedIn</a>
-          <a href="https://youtube.com/" target="_blank">YouTube</a>
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/company/your-company"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="relative group"
+          >
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
+              style={{
+                background:
+                  'radial-gradient(circle at 50% 50%, #8b5cf6 0%, #ec4899 60%, #3b82f6 100%)',
+                zIndex: 0,
+              }}
+            />
+            <Linkedin className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
+          </a>
+          {/* YouTube */}
+          <a
+            href="https://youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="relative group"
+          >
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
+              style={{
+                background:
+                  'radial-gradient(circle at 50% 50%, #ec4899 0%, #8b5cf6 60%, #3b82f6 100%)',
+                zIndex: 0,
+              }}
+            />
+            <Youtube className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
+          </a>
+          {/* Twitter/X */}
+          <a
+            href="https://twitter.com/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="relative group"
+          >
+            <span
+              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"
+              style={{
+                background:
+                  'radial-gradient(circle at 50% 50%, #3b82f6 0%, #8b5cf6 60%, #ec4899 100%)',
+                zIndex: 0,
+              }}
+            />
+            <X className="relative z-10 h-6 w-6 transition-transform duration-200 group-hover:scale-110 hover:text-primary" />
+          </a>
         </div>
       </div>
     </footer>
