@@ -43,8 +43,8 @@ const Home: NextPageWithLayout = () => {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1" />
       </Head>
 
-      <div className="container mx-auto">
-        <div className="navbar bg-base-100 px-0 sm:px-1">
+      <div className="min-h-screen w-full">
+        <div className="navbar bg-base-100 px-4 sm:px-6 lg:px-8">
           <div className="flex-1">
             <Link href="/" className="inline-flex items-center p-0 leading-none">
               <Image
@@ -58,8 +58,8 @@ const Home: NextPageWithLayout = () => {
               />
             </Link>
           </div>
-          <div className="flex-none">
-            <ul className="menu menu-horizontal flex items-center gap-6 sm:gap-8">
+          <div className="hidden md:flex flex-none">
+            <ul className="menu menu-horizontal flex items-center gap-2 lg:gap-4">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/features">Features</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
@@ -77,16 +77,23 @@ const Home: NextPageWithLayout = () => {
               </li>
               <li><ThemeToggle /></li>
               <li>
+                <Link href="/auth/login" className="btn btn-outline btn-sm">
+                  Sign In
+                </Link>
+              </li>
+              <li>
                 <Link href="/auth/join" className="btn btn-primary text-white">
                   Sign Up
                 </Link>
               </li>
-              <li>
-                <Link href="/auth/login" className="btn btn-outline">
-                  Sign In
-                </Link>
-              </li>
             </ul>
+          </div>
+          {/* Mobile menu */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <Link href="/auth/login" className="btn btn-outline btn-sm">
+              Sign In
+            </Link>
           </div>
         </div>
         <HeroSection />
