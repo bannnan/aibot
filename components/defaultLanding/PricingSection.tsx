@@ -6,18 +6,19 @@ const PricingSection = () => {
   const { t } = useTranslation('common');
   return (
     <section className="py-6">
-      <div className="flex flex-col justify-center space-y-6">
-        <h2 className="text-center text-4xl font-bold normal-case">
-          Simple, Transparent Pricing
-        </h2>
-        <p className="text-center text-xl">
-          Choose a plan that fits your team and scale when you’re ready.
-        </p>
-        <div className="flex items-center justify-center">
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col justify-center space-y-6">
+          <h2 className="text-center text-2xl sm:text-4xl font-bold normal-case">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="text-center text-base sm:text-xl">
+            Choose a plan that fits your team and scale when you’re ready.
+          </p>
+          <div className="flex items-center justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Starter Plan */}
-            <Card className="rounded-md border border-gray-300 dark:border-gray-200">
-              <Card.Body>
+            <Card className="rounded-md border border-gray-300 dark:border-gray-600">
+              <Card.Body className="p-4 sm:p-6">
                 <Card.Title tag="h2">Starter – Free</Card.Title>
                 <p>For individuals & hobby projects</p>
                 <ul className="flex flex-col space-y-2 mt-5">
@@ -40,8 +41,8 @@ const PricingSection = () => {
             </Card>
 
             {/* Pro Plan */}
-            <Card className="rounded-md border border-gray-300 dark:border-gray-200">
-              <Card.Body>
+            <Card className="rounded-md border border-gray-300 dark:border-gray-600">
+              <Card.Body className="p-4 sm:p-6">
                 <Card.Title tag="h2">Pro – $49/mo</Card.Title>
                 <p>For growing teams</p>
                 <ul className="flex flex-col space-y-2 mt-5">
@@ -67,8 +68,8 @@ const PricingSection = () => {
             </Card>
 
             {/* Enterprise Plan */}
-            <Card className="rounded-md border border-gray-300 dark:border-gray-200">
-              <Card.Body>
+            <Card className="rounded-md border border-gray-300 dark:border-gray-600">
+              <Card.Body className="p-4 sm:p-6">
                 <Card.Title tag="h2">Enterprise – Custom</Card.Title>
                 <p>For large organizations</p>
                 <ul className="flex flex-col space-y-2 mt-5">
@@ -92,6 +93,7 @@ const PricingSection = () => {
                 </Button>
               </Card.Actions>
             </Card>
+            </div>
           </div>
         </div>
       </div>
