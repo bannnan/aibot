@@ -2,11 +2,18 @@ import app from '@/lib/app';
 import Image from 'next/image';
 import useTheme from 'hooks/useTheme';
 
-const Brand = () => {
+interface BrandProps {
+  size?: number; // size in pixels
+}
+
+const Brand = ({ size = 48 }: BrandProps) => {
   const { theme } = useTheme();
   return (
     <div className="flex pt-6 shrink-0 items-center">
-      <div className="relative h-12 w-12"> {/* 48x48 box */}
+      <div
+        className="relative mx-auto"
+        style={{ height: `${size}px`, width: `${size}px` }}
+      >
         <Image
           src={app.logoUrl}
           alt={app.name}

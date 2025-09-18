@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 import React from 'react';
 import Header from './Header';
 import Drawer from './Drawer';
+import Brand from './Brand';
 import { useRouter } from 'next/navigation';
 
 export default function AppShell({ children }) {
@@ -22,7 +23,11 @@ export default function AppShell({ children }) {
 
   return (
     <div>
-      <Drawer sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <Drawer sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
+        <div className="p-4">
+          <Brand size={96} />
+        </div>
+      </Drawer>
       <div className="lg:pl-64">
         <Header setSidebarOpen={setSidebarOpen} />
         <main className="py-5">
