@@ -25,7 +25,7 @@ export default function AppShell({ children }) {
     <div>
       <Drawer sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
         <div className="p-4">
-          <Brand size={128} />
+          <Brand size={256} />
         </div>
       </Drawer>
       <div className="lg:pl-64">
