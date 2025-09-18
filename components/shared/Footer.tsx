@@ -56,7 +56,7 @@ export default function Footer() {
             className="relative group"
           >
             <Linkedin
-              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
+              className="relative z-10 h-6 w-6 text-gray-300 transition duration-200 group-hover:drop-shadow-[0_0_10px_#0a66c2]"
             />
           </a>
           {/* YouTube */}
@@ -68,7 +68,7 @@ export default function Footer() {
             className="relative group"
           >
             <Youtube
-              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
+              className="relative z-10 h-6 w-6 text-gray-300 transition duration-200 group-hover:drop-shadow-[0_0_10px_#ff0000]"
             />
           </a>
           {/* Twitter/X */}
@@ -80,7 +80,7 @@ export default function Footer() {
             className="relative group"
           >
             <X
-              className="relative z-10 h-6 w-6 text-gray-300 transition-transform duration-200 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#8b5cf6] group-hover:via-[#ec4899] group-hover:to-[#3b82f6]"
+              className="relative z-10 h-6 w-6 text-gray-300 transition duration-200 group-hover:drop-shadow-[0_0_10px_#1da1f2]"
             />
           </a>
         </div>
