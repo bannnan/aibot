@@ -38,7 +38,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={oneDark as { [key: string]: CSSProperties }}
+        style={oneDark as any}
         language={match[1]}
         PreTag="div"
         {...props}
