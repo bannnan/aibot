@@ -66,6 +66,7 @@ const Home: NextPageWithLayout = () => {
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/chat">Chat</Link></li>
               <li tabIndex={0}>
                 <details>
                   <summary>Docs</summary>
