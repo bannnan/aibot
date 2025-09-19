@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, CSSProperties } from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';
 import { HTMLAttributes, ReactNode } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -38,7 +38,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={oneDark}
+        style={oneDark as { [key: string]: CSSProperties }}
         language={match[1]}
         PreTag="div"
         {...props}
