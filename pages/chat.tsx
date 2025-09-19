@@ -8,9 +8,9 @@ const Chat: NextPageWithLayout = () => {
   return (
     <div className="h-screen flex flex-col">
       <div className="bg-base-100 border-b border-gray-200 dark:border-gray-700 p-4">
-        <h1 className="text-2xl font-bold">AI Assistant</h1>
+        <h1 className="text-2xl font-bold">Termynal</h1>
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          Chat with your AI assistant powered by AWS Bedrock
+        Chat with your AI assistant powered by AWS Bedrock
         </p>
       </div>
       <div className="flex-1 overflow-hidden">

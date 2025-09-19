@@ -15,7 +15,7 @@ export default function ChatInterface() {
     {
       id: '1',
       role: 'assistant',
-      content: 'Hello! I\'m your AI assistant. How can I help you today?',
+      content: 'Hello there!👋 How can I help you today?',
       timestamp: new Date()
     }
   ]);
