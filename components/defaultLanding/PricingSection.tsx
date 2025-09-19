@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { Button, Card } from 'react-daisyui';
 
 const PricingSection = () => {
-  const { t } = useTranslation('common');
+  useTranslation('common');
   return (
     <section className="py-6">
       <div className="container mx-auto px-4">

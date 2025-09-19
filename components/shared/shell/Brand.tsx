@@ -7,7 +7,7 @@ interface BrandProps {
 }
 
 const Brand = ({ size = 48 }: BrandProps) => {
-  const { theme } = useTheme();
+  useTheme();
   return (
     <div className="flex pt-6 shrink-0 items-center">
       <div

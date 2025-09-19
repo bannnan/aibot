@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { Card } from 'react-daisyui';
 
 const FAQSection = () => {
-  const { t } = useTranslation('common');
+  useTranslation('common');
   return (
     <section className="py-6">
       <div className="container mx-auto px-4">

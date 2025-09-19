@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 
 const FeatureSection = () => {
-  const { t } = useTranslation('common');
+  useTranslation('common');
   return (
     <section className="py-6 px-2">
       <div className="container mx-auto px-4">

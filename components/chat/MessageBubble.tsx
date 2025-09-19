@@ -39,7 +39,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
         <div className="prose prose-sm max-w-none dark:prose-invert">
           <ReactMarkdown
             components={{
-              code({ node, inline, className, children, ...props }) {
+              code({ inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '');
                 return !inline && match ? (
                   <SyntaxHighlighter

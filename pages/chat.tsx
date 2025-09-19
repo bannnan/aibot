@@ -1,4 +1,3 @@
-import { type ReactElement } from 'react';
 import type { NextPageWithLayout } from 'types';
 import ChatInterface from '@/components/chat/ChatInterface';
 import { GetServerSidePropsContext } from 'next';
