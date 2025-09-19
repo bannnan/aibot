@@ -20,7 +20,7 @@ interface CodeProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;
 }
 
-const CodeBlock = ({ inline, className, children, ...props }: CodeProps) => {
+const CodeBlock: any = ({ inline, className, children, ...props }: CodeProps) => {
   const match = /language-(\w+)/.exec(className || '');
   if (!inline && match) {
     return (
