@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import ReactMarkdown, { Components, CodeComponent } from 'react-markdown';
+import ReactMarkdown, { Components } from 'react-markdown';
+import { HTMLAttributes, ReactNode } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -27,7 +28,13 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  const CodeBlock: CodeComponent = ({ inline, className, children, ...props }) => {
+  interface CodeProps extends HTMLAttributes<HTMLElement> {
+    inline?: boolean;
+    className?: string;
+    children?: ReactNode;
+  }
+
+  const CodeBlock = ({ inline, className, children, ...props }: CodeProps) => {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
