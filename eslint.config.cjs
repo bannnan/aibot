@@ -44,6 +44,7 @@ module.exports = [{
     rules: {
         "@typescript-eslint/no-explicit-any": "off",
         "i18next/no-literal-string": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
     }
 }, {
     files: ["**/*.js"],
