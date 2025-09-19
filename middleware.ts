@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import micromatch from 'micromatch';
 import { getToken } from 'next-auth/jwt';
 import { NextResponse } from 'next/server';
