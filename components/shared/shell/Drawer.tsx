@@ -8,9 +8,10 @@ import { useTranslation } from 'next-i18next';
 interface DrawerProps {
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
+  children?: React.ReactNode;
 }
 
-const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
+const Drawer = ({ sidebarOpen, setSidebarOpen, children }: DrawerProps) => {
   const { t } = useTranslation('common');
 
   return (
@@ -50,6 +51,8 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
           <Navigation />
         </div>
       </div>
+
+      {children}
     </>
   );
 };
