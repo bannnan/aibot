@@ -1,6 +1,5 @@
-import { useState, CSSProperties } from 'react';
-import ReactMarkdown, { Components } from 'react-markdown';
-import { HTMLAttributes, ReactNode } from 'react';
+import React, { useState, HTMLAttributes, ReactNode } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -15,6 +14,34 @@ interface MessageBubbleProps {
   message: Message;
 }
 
+interface CodeProps extends HTMLAttributes<HTMLElement> {
+  inline?: boolean;
+  className?: string;
+  children?: ReactNode;
+}
+
+const CodeBlock = ({ inline, className, children, ...props }: CodeProps) => {
+  const match = /language-(\w+)/.exec(className || '');
+  if (!inline && match) {
+    return (
+      <SyntaxHighlighter
+        // Cast to any to satisfy react-syntax-highlighter's style typing
+        style={oneDark as any}
+        language={match[1]}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    );
+  }
+  return (
+    <code className={className} {...props}>
+      {children}
+    </code>
+  );
+};
+
 export default function MessageBubble({ message }: MessageBubbleProps) {
   const [copied, setCopied] = useState(false);
 
@@ -28,34 +55,6 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  interface CodeProps extends HTMLAttributes<HTMLElement> {
-    inline?: boolean;
-    className?: string;
-    children?: ReactNode;
-  }
-
-  const CodeBlock = ({ inline, className, children, ...props }: CodeProps) => {
-    const match = /language-(\w+)/.exec(className || '');
-    return !inline && match ? (
-      <SyntaxHighlighter
-        style={oneDark as any}
-        language={match[1]}
-        PreTag="div"
-        {...props}
-      >
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
-    ) : (
-      <code className={className} {...props}>
-        {children}
-      </code>
-    );
-  };
-
-  const components: Components = {
-    code: CodeBlock,
-  };
-
   return (
     <div className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
       <div
@@ -66,7 +65,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
         }`}
       >
         <div className="prose prose-sm max-w-none dark:prose-invert">
-          <ReactMarkdown components={components}>
+          <ReactMarkdown components={{ code: CodeBlock }}>
             {message.content}
           </ReactMarkdown>
         </div>
@@ -78,7 +77,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
               className="hover:opacity-100 transition-opacity"
               title="Copy message"
             >
-              {copied ? '✓ Copied' : '��'}
+              {copied ? '✓ Copied' : 'Copy'}
             </button>
           )}
         </div>
